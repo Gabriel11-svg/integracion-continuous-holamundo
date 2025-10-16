@@ -14,8 +14,8 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Ejecutar el programa Hola Mundo
-        run: node hola.js
+        run: node Hola.js
 
       - name: Enviar notificación a ntfy.sh
         run: |
-          curl -d "🚀 Se ha subido nuevo código al repositorio en la rama main (Hola Mundo completado)" ntfy.sh/devops-itla
+          curl -d "🚀 Se ha subido nuevo código al repositorio en la rama main (Hola Mundo completado)" ntfy.sh/devops-itla || true
