@@ -1,0 +1,21 @@
+name: Alerta de subida a main
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  notificar:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar el código del repositorio
+        uses: actions/checkout@v4
+
+      - name: Ejecutar el programa Hola Mundo
+        run: node hola.js
+
+      - name: Enviar notificación a ntfy.sh
+        run: |
+          curl -d "🚀 Se ha subido nuevo código al repositorio en la rama main (Hola Mundo completado)" ntfy.sh/devops-itla
